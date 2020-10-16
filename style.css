@@ -1,3 +1,10 @@
+button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
 html {
     min-height: 100%;
     background-size: cover;
@@ -8,8 +15,16 @@ html {
 
 input {
     display: block;
-    margin: 50px auto auto auto;
-    width: 180px;
+    margin: 30px auto auto auto;
+    text-align: center;
+    width: 210px;
+}
+
+h1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .container {
@@ -18,7 +33,7 @@ input {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 120px;
+    margin-top: 30px;
     height: 700px;
     width: 700px;
     background-color: salmon;
@@ -29,6 +44,6 @@ input {
     border: 1px solid rgba(0, 247, 255, 0.87);
 }
 
-.grid-item:hover {
-    background-color: yellowgreen;
+.permahover {
+    background-color: var(--background-colour);
 }
