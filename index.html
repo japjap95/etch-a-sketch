@@ -5,10 +5,18 @@
         <title>japjap 95's etch-a-sketch</title>
     </head>
     <body>
-        <h1>japjap95's etch-a-sketch</h1>
-        <input id="newSizeButton" placeholder="Enter number of rows/columns"></input>
-        <input id="color" placeholder="Change colour"></input>
-        <button id="reset">Reset board</button>
+        <h1>etch-a-sketch</h1>
+        <div id="left-container">
+            <input id="newSizeRange" type="range" min="1" max="100">
+            <button id="newSizeButton"></button>
+            <form id="color-options">
+                <label for="blue">Blue</label>
+                <input type="radio" value="default">
+                <label for="color">Choose color</label>
+                <input id="color" type="color">
+            </form>
+            <button id="reset">Reset board</button>
+        </div>
         <div class="container"></div>
     </body>
     <script type="module" src="app.js"></script>

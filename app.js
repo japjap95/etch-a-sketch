@@ -1,27 +1,34 @@
 const app = (x) => {
-    const size = 16;
     const container = document.querySelector(".container");
-    const colorController  = document.querySelector(".permahover");
+    const newSizeButton = document.getElementById("newSizeButton");
+    const newSizeRange = document.getElementById("newSizeRange");
+    newSizeButton.value = 20;
+    newSizeButton.textContent = `New grid (${newSizeRange.value}x${newSizeRange.value})`
+    newSizeRange.addEventListener("mousemove", function() {
+        newSizeButton.textContent = `New grid (${newSizeRange.value}x${newSizeRange.value})`;
+    });
+
+    let color = "gray";
     const resetButton = document.getElementById("reset").addEventListener("click", () => {
         let blocksToReset = container.getElementsByClassName("grid-item");
         for (let i = 0; i < blocksToReset.length; i++) {
-            blocksToReset[i].classList.remove("permahover");
+            blocksToReset[i].style.setProperty("background-color", "white");
         }
     })
 
     const colourButton = document.getElementById("color");
     colourButton.addEventListener("keydown", function(e) {
         if (e.keyCode === 13) {
-            changeColor(colourButton.value);
+            color = colourButton.value;
         }
     })
 
-    function changeColor(color) {
-        document.documentElement.style.setProperty("--background-colour", color);
-    }
-
-    function switchState(object) {
-        object.classList.add("permahover");
+    function generateRandomColor() {
+        const colors = []
+        for (let i = 0; i < 3; i++) {
+            colors[i] = Math.floor(Math.random() * 256);
+        }
+        return colors;
     }
 
     function makeRows(size) {
@@ -33,26 +40,18 @@ const app = (x) => {
             newDiv.setAttribute("id", `grid_item_${i}`)
             newDiv.classList.add("grid-item");
             newDiv.addEventListener("mouseover", () => {
-                switchState(newDiv);
+                newDiv.style.setProperty("background-color", color);
             })
             container.appendChild(newDiv);
         }
     }
 
-    const newSizeButton = document.getElementById("newSizeButton");
-    newSizeButton.addEventListener("keydown", function(e) {
-        if (e.keyCode ===  13) {
-            if (newSizeButton.value <= 100) {
-                makeRows(newSizeButton.value);
-            } else {
-                alert("Please enter a number between 1-100. Anything over that and the boxes will be too small!");
-            }
-            
-        }
+    newSizeButton.addEventListener("click", function(e) {
+        makeRows(newSizeRange.value);
     }) 
 
     document.documentElement.style.setProperty("--background-colour", "blue");
-    makeRows(size);
+    makeRows(newSizeRange.value);
     
 
 }
