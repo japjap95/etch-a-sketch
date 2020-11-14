@@ -2,18 +2,26 @@
 <html>
     <head>
         <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         <title>japjap 95's etch-a-sketch</title>
     </head>
     <body>
         <h1>etch-a-sketch</h1>
         <div id="left-container">
+            <h2>Control panel</h2>
             <input id="newSizeRange" type="range" min="1" max="100">
             <button id="newSizeButton"></button>
             <form id="color-options">
-                <label for="blue">Blue</label>
-                <input type="radio" value="default">
-                <label for="color">Choose color</label>
-                <input id="color" type="color">
+                <input id="gray" type="radio" name="color" value="gray" checked="checked">
+                <label for="gray">Gray</label><br>
+                <input id="white" type="radio" name="color" value="white">
+                <label for="white">White (eraser)</label><br>
+                <input id="random" type="radio" name="color" value="random">
+                <label for="random">Random</label><br>
+                <input id="chooseYourOwn" type="radio" name="color" value="choose">
+                <label for="color">Choose your own color</label>
+                <input id="color" type="color" name="color"><br>
             </form>
             <button id="reset">Reset board</button>
         </div>

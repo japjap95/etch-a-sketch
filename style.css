@@ -1,43 +1,58 @@
 button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+    margin: 10px auto 10px auto;
+    font-size: 29px;
+    font-family: 'Lobster', cursive;
+    height: 100px;
+    width: 300px;
+    background-color: #F02A71;
+    border-radius: 30px;
+    border: 3px solid white;
 }
 
 html {
     min-height: 100%;
     background-size: cover;
-    background-color: #F0F1F4;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
 }
 
 input {
-    display: block;
-    margin: 15px auto auto auto;
-    text-align: center;
-    width: 210px;
+    margin-top: 0px;
 }
 
 h1 {
     display: block;
+    margin-top: 2px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
     text-align: center;
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+    color: #F02A71;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
 }
 
-label {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+h2 {
+    margin: 20px auto auto auto;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
 }
+
+
 
 #color {
-    width: 65px;
+    width: 40px;
 }
 
 #color-options {
     line-height: 40px;
+    padding-top: 25px;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    font-size: 20px;
+    
 }
 
 #left-container {
@@ -45,7 +60,14 @@ label {
     float: left;
     margin-left: 17vw;
     flex-direction: column;
+    justify-content: space-between;
+    width: 40vh;
+    font-family: 'Lobster', cursive;
     
+}
+
+#newSizeRange {
+    margin-top: 20px;
 }
 
 .container {
@@ -54,14 +76,14 @@ label {
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
-    height: 45vw;
-    width: 45vw;
+    height: 41vw;
+    width: 41vw;
     background-color: white;
     border: 3px solid gray;
 }
 
 .grid-item {
     text-align: center;
-    border: 1px solid rgba(255, 5, 68, 0.1);
+    border: 1px solid rgba(53, 53, 53, 0.07);
 }
+
